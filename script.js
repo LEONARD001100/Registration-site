@@ -5,7 +5,7 @@ console.log("script loaded");
 const form = document.querySelector(".form");
 
 // 🔴 IMPORTANT: Paste your ACTUAL Web App URL here
-const SCRIPT_URL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzfV6c0marH4S2Lk6RJjybLTBI8HQ9_9sseuvo55VGPLNhsQ9kUVghgo5IOiXSO0no/exec";
 
 // Safety check
 if (!form) {
