@@ -1,4 +1,4 @@
-/* RESET & BASE */
+/* RESET */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -12,7 +12,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 16px;
 }
 
 .required {
@@ -26,8 +26,9 @@ body {
     background-image: url(background2.jpg);
     background-size: cover;
     background-position: center;
-    border-radius: 24px;
-    padding: 30px 20px;
+    border-radius: 22px;
+    padding: 24px 16px;
+    overflow: hidden; /* IMPORTANT: prevents any child overflow */
 }
 
 /* HEADER */
@@ -35,56 +36,64 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 14px;
     text-align: center;
 }
 
-/* LOGO FIX (IMPORTANT PART) */
+/* 🔒 LOGO — VERCEL + MOBILE SAFE */
 .logo {
     background: #fff;
-    padding: 8px;
+    padding: 6px;
     border-radius: 10px;
-    max-width: 120px;     /* mobile-safe */
+
+    /* HARD LIMITS */
+    width: clamp(80px, 22vw, 120px);
+    max-height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo img {
     width: 100%;
     height: auto;
+    max-height: 70px;
+    object-fit: contain;
     display: block;
 }
 
 /* COMPANY NAME */
 .company-name h1 {
     color: #fff;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .company-name h4 {
     color: #ddd;
+    font-size: 0.9rem;
     font-weight: 400;
-    font-size: 0.95rem;
 }
 
 /* FORM */
 .container-for-form {
-    margin-top: 40px;
+    margin-top: 32px;
 }
 
 .form {
     display: grid;
-    gap: 24px;
+    gap: 22px;
 }
 
-/* INPUT GROUP */
 .input-group {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
 }
 
 label {
     color: #fff;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 /* INPUTS */
@@ -92,41 +101,41 @@ input,
 select,
 textarea {
     width: 100%;
-    padding: 12px 14px;
+    padding: 12px;
     font-size: 1rem;
     border-radius: 8px;
     border: none;
 }
 
 textarea {
-    resize: vertical;
     min-height: 100px;
+    resize: vertical;
 }
 
-/* FOCUS STATES */
+/* FOCUS */
 input:focus,
 select:focus,
 textarea:focus {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.6);
 }
 
 /* BUTTON */
 button {
-    margin-top: 20px;
+    margin-top: 18px;
     width: 200px;
-    height: 48px;
+    height: 46px;
     border-radius: 10px;
     border: none;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 600;
-    background: #ffffff;
+    background: #fff;
     color: #263d8b;
     cursor: pointer;
     align-self: center;
 }
 
-/* DESKTOP BREAKPOINT */
+/* DESKTOP */
 @media (min-width: 768px) {
 
     .container-for-logo-and-company-name {
@@ -136,22 +145,24 @@ button {
     }
 
     .logo {
-        max-width: 180px;   /* larger logo on desktop */
+        width: clamp(120px, 12vw, 180px);
+        max-height: 120px;
+    }
+
+    .logo img {
+        max-height: 100px;
     }
 
     .company-name h1 {
-        font-size: 2.5rem;
+        font-size: 2.4rem;
     }
 
     .form {
         grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
+        gap: 28px;
     }
 
-    .input-group textarea {
-        grid-column: span 2;
-    }
-
+    .input-group textarea,
     button {
         grid-column: span 2;
     }
