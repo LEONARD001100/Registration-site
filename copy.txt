@@ -263,7 +263,7 @@ form.addEventListener("submit", function (event) {
     // 5. Convert FormData to a plain object
     const data = {
         prefix: formData.get("prefix"),
-        fullName: formData.get("full-name"),
+        fullName: formData.get("first-name"),
         lastName: formData.get("last-name"),
         address: formData.get("address"),
         email: formData.get("email"),
