@@ -1,7 +1,6 @@
 const form = document.querySelector(".form");
 
-const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbzfV6c0marH4S2Lk6RJjybLTBI8HQ9_9sseuvo55VGPLNhsQ9kUVghgo5IOiXSO0no/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzfV6c0marH4S2Lk6RJjybLTBI8HQ9_9sseuvo55VGPLNhsQ9kUVghgo5IOiXSO0no/exec";
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -14,6 +13,6 @@ form.addEventListener("submit", function (event) {
     mode: "no-cors"
   });
 
-  alert("Form submitted successfully!");
+  alert("Submitted");
   form.reset();
 });
